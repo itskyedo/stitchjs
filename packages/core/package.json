@@ -1,0 +1,51 @@
+{
+  "name": "@stitchjs/core",
+  "version": "0.1.0",
+  "author": "Kyedo <hey@kyedo.dev> (https://github.com/itskyedo)",
+  "license": "MIT",
+  "description": "An experimental 2D graphics library for building applications with the Canvas API",
+  "keywords": [
+    "2d",
+    "javascript",
+    "typescript",
+    "graphics",
+    "canvas"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itskyedo/stitchjs.git"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@itskyedo/eslint-config": "^0.1.1",
+    "@stitchjs/layout": "*",
+    "@stitchjs/tsconfig": "*",
+    "eslint": "^9.18.0",
+    "tsup": "^8.3.5",
+    "typescript": "5.7.3"
+  }
+}

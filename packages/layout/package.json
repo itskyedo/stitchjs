@@ -1,0 +1,31 @@
+{
+  "name": "@stitchjs/layout",
+  "version": "0.0.0",
+  "private": true,
+  "author": "Kyedo <hey@kyedo.dev> (https://github.com/itskyedo)",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@itskyedo/eslint-config": "^0.1.1",
+    "@stitchjs/tsconfig": "*",
+    "eslint": "^9.18.0",
+    "tsup": "^8.3.5",
+    "typescript": "5.7.3"
+  }
+}
