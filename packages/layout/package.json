@@ -22,7 +22,7 @@
     "check": "tsc --noEmit"
   },
   "devDependencies": {
-    "@itskyedo/eslint-config": "^0.1.1",
+    "@itskyedo/eslint-config": "^0.2.0",
     "@stitchjs/tsconfig": "*",
     "eslint": "^9.18.0",
     "tsup": "^8.3.5",
