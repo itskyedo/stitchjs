@@ -87,16 +87,32 @@ export function parse<T>(
 
       rowsReducer.addRow(child);
     } else {
-      let willOverflow: boolean =
-        rowsReducer.lastRow.commonProps.display === Display.block ||
-        rowsReducer.lastRow.x2 > item.contentRect.x2;
-      if (!willOverflow) {
+      let willOverflow: boolean;
+      const lastRow = rowsReducer.lastRow;
+      const isPrevABlock = lastRow.commonProps.display === Display.block;
+      const doesChildWidthFill = child.props.width === Fill;
+      if (isPrevABlock) {
+        willOverflow = true;
+      } else if (doesChildWidthFill) {
         parse(child, item, {
           x: rowsReducer.lastRow.x2,
           y: rowsReducer.lastRow.y1,
         });
-        willOverflow =
-          rowsReducer.lastRow.x2 + child.outerRect.width > item.contentRect.x2;
+
+        willOverflow = false;
+      } else {
+        const checkWithinBounds = () =>
+          lastRow.x2 + child.outerRect.width > item.contentRect.x2;
+        if (checkWithinBounds()) {
+          willOverflow = true;
+        } else {
+          parse(child, item, {
+            x: rowsReducer.lastRow.x2,
+            y: rowsReducer.lastRow.y1,
+          });
+
+          willOverflow = checkWithinBounds();
+        }
       }
 
       if (willOverflow) {
