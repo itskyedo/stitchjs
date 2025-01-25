@@ -150,13 +150,13 @@ describe('intrinsic values', () => {
       x: 0,
       y: 0,
       width: 50,
-      height: 0,
+      height: 100,
     });
 
     expect(root.children?.[1]?.outerRect).toMatchObject({
-      x: 0,
+      x: 50,
       y: 0,
-      width: 100,
+      width: 50,
       height: 100,
     });
 
