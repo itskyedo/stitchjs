@@ -287,3 +287,82 @@ describe('margin', () => {
     });
   });
 });
+
+describe('padding', () => {
+  const root: Element = {
+    display: Display.inlineBlock,
+    width: 200,
+    height: 200,
+    paddingTop: 20,
+    paddingRight: 20,
+    paddingBottom: 20,
+    paddingLeft: 20,
+    children: [
+      {
+        display: Display.inlineBlock,
+        width: 'fill',
+        height: 'fill',
+        paddingTop: 20,
+        paddingRight: 20,
+        paddingBottom: 20,
+        paddingLeft: 20,
+      },
+    ],
+  };
+
+  parseLayout(root);
+
+  test('root has valid outerRect', () => {
+    expect(root.outerRect).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 200,
+      height: 200,
+    });
+  });
+
+  test('root has valid clientRect', () => {
+    expect(root.clientRect).toMatchObject({
+      x: 0,
+      y: 0,
+      width: 200,
+      height: 200,
+    });
+  });
+
+  test('root has valid contentRect', () => {
+    expect(root.contentRect).toMatchObject({
+      x: 20,
+      y: 20,
+      width: 160,
+      height: 160,
+    });
+  });
+
+  test('child has valid outerRect', () => {
+    expect(root.children?.[0]?.outerRect).toMatchObject({
+      x: 20,
+      y: 20,
+      width: 160,
+      height: 160,
+    });
+  });
+
+  test('child has valid clientRect', () => {
+    expect(root.children?.[0]?.clientRect).toMatchObject({
+      x: 20,
+      y: 20,
+      width: 160,
+      height: 160,
+    });
+  });
+
+  test('child has valid contentRect', () => {
+    expect(root.children?.[0]?.contentRect).toMatchObject({
+      x: 40,
+      y: 40,
+      width: 120,
+      height: 120,
+    });
+  });
+});
