@@ -4,4 +4,4 @@ commit-msg:
 
 pre-push:
   jobs:
-    - run: npm run check
+    - run: npm run check && npm run test
