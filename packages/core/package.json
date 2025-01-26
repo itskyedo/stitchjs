@@ -1,6 +1,6 @@
 {
   "name": "@stitchjs/core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Kyedo <hey@kyedo.dev> (https://github.com/itskyedo)",
   "license": "MIT",
   "description": "An experimental 2D graphics library for building applications with the Canvas API",
