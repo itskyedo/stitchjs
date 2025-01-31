@@ -34,11 +34,16 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "formatcheck": "prettier --check .",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
     "lint": "eslint",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "lintfix": "eslint --fix",
+    "check": "npm run formatcheck && npm run typecheck && npm run lint",
+    "fix": "npm run format && npm run lintfix",
     "test": "vitest",
     "test:watch": "vitest --watch",
-    "check": "tsc --noEmit"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
     "@itskyedo/eslint-config": "^0.2.0",

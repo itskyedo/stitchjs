@@ -6,12 +6,13 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint",
-    "clean": "turbo clean && rm -rf node_modules",
-    "format": "prettier --write .",
-    "test": "turbo test",
     "formatcheck": "prettier --check .",
-    "check": "npm run formatcheck && turbo check"
+    "format": "prettier --write .",
+    "lint": "turbo lint",
+    "check": "npm run formatcheck && turbo check",
+    "fix": "turbo fix",
+    "test": "turbo test",
+    "clean": "turbo clean && rm -rf node_modules"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
