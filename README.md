@@ -17,13 +17,12 @@ Inspired by [Solid.js](https://www.solidjs.com) and its use of signals for react
 
 ## 🚀 Getting Started
 
-### Installation
+This is for experimental purposes only and not recommeded for use in production.
 
-This is not recommended but if you just want to try it out, get started by running the command:
-
-```console
-npm install @stitchjs/core
-```
+1. Clone the repo and cd into the root of the project
+2. Run `npm install` to install dependencies
+3. Run `npm run build` to build all packages in the monorepo
+4. Copy the build(s) to use directly or link using npm to use in another project
 
 ## 📚 API
 
