@@ -4,7 +4,6 @@
   "license": "MIT",
   "author": "Kyedo <hey@kyedo.dev> (https://github.com/itskyedo)",
   "scripts": {
-    "prepare": "lefthook install",
     "build": "turbo build",
     "dev": "turbo dev",
     "formatcheck": "prettier --check .",
